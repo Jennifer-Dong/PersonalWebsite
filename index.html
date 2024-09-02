@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jennifer Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="header">                                              <!--the header section-->
+        <div class="container">
+            <nav>                                                  <!--navigation bar-->
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#work">Work Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>Bachelor in Computer Science and Medical Sciences</p>
+                <h1>Jennifer Dong</h1>
+            </div>
+        </div>
+    </div>
+
+    <div id="about">                                               <!--about section-->
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/banner2.jpg" alt="me">
+                </div>
+                <div class="about-col-2">
+
+                    <h1 class="about-me">About Me</h1>
+                    
+                    <div class="tab-titles">                      <!--tabs-->
+                        <p class="tab-links active-link" onclick="opentab('general')">General</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                        <p class="tab-links" onclick="opentab('certificates')">Certificates</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="general">
+                        <p>Hello! My name is Jennifer and I am currently in my final year studying Computer Science and Medical Sciences at the
+                            University of Western Ontario. I was previously in the Life Sciences program at McMaster University and the International 
+                            Baccalaureate program for 3 years in high school. School has helped to shape me into being who I am today, someone who is amiable, 
+                            ambitious and trustworthy. I have gained so many skills through my school experience and extra curricular activities, such as a 
+                            great work ethic and time management. I am fluent in English and Chinese, and have beginner to intermediate skills in French.</p>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2020-2024</span><br>Victoria Park CI</li>
+                            <li><span>2019-2020</span><br>Bachelor of Life Science at McMaster</li>
+                            <li><span>2020-2025</span><br>Bachelor of Computer Science and Medical Sciences<br> at The University of Western Ontario</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="certificates">
+                        <ul>
+                            <li><span>Microsoft AZ-900</span><br>Azure Fundamentals</li> 
+                            <li><span>Microsoft MS-900</span><br>Microsoft 365 Fundamentals</li>
+                            <li><span>Microsoft PL-900</span><br>Power Platform Fundamentals</li>
+                            <li><span>Microsoft SC-900</span><br>Security, Compliance, and Identity Fundamentals</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="work">                                               <!--work experience section-->
+        <div class="container">
+            <h1 class="sub-title">Work Experience</h1>
+            <div class="work-exp">
+                <div class="work">
+                    <img src="images/t1.jpg" alt="okta">
+                    <div class="layer">
+                        <h3>Software Engineer in Test @ Okta</h3>
+                        <h5>May 2024 - July 2024</h5>
+                        <p>Developed an end-to-end automation process for generating cross-browser test reports, reducing manual effort, saving ~$30,000/year. Utilized Jira API for automated issue tracking & updating, and Slack API for report notifications, streamlining the cross-browser testing process.</p>
+                        <a href="https://www.okta.com/" target="_blank"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/avanade2.jpg" alt="avanade">
+                    <div class="layer">
+                        <h3>Software Engineer / PM @ Avanade</h3>
+                        <h5>January 2023 - April 2023</h5>
+                        <p>Optimized software and prerequisite installations with Windows PowerShell scripted automation. Managed a $500M project, implementing Record Center data to SharePoint Online, and ensured seamless project progress through daily standups with clients and stakeholders.</p>
+                        <a href="https://www.avanade.com/en-ca" target="_blank"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/verticalscope1.jpg" alt="verticalscope">
+                    <div class="layer">
+                        <h3>Quality Assurance @ VerticalScope Inc.</h3>
+                        <h5>May 2022 - Dec 2022</h5>
+                        <p>Developed forum cross-linking features, conducted A/B testing, and performed back-end testing utilizing MySQL queries, alongside developing automation scripts using Python Selenium Webdriver.</p>
+                        <a href="https://www.verticalscope.com/" target="_blank"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/ai4good2.jpg" alt="ai4good">
+                    <div class="layer">
+                        <h3>Software Engineer @ AI4Good</h3>
+                        <h5>April 2021 - July 2021</h5>
+                        <p>Worked alongside industry professionals to create N[a]rrat[i]ve, an online application that aids patients and health care professionals with medications. Our model can predict which side effects are more likely to occur,how severe they are, and helps doctors find replacement drugs.</p>
+                        <a href="https://www.ai4goodlab.com/projects/" target="_blank"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="projects">                                               <!--projects section-->
+        <div class="container">
+            <h1 class="sub-title">Projects</h1>
+            <div class="project-list">
+                <div>
+                    <i class="fa-solid fa-computer"></i>    <!--fontawesome icons-->
+                    <h2>Wordle</h2>
+                    <p>Created the wordle game using C++ with wt. Wordle is a game where you guess an unknown word by giving letters and receiving feedback to help deduce the answer.</p>
+                    <a href="https://github.com/Jennifer-Dong/Wordle">Github Link</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-spoon"></i>
+                    <h2>What Vegetable Are You Quiz</h2>
+                    <p>An interactive personality quiz that determines which vegetable best matches your traits, combining personality assessment with engaging and fun results. Click the link below to take the quiz!</p>
+                    <a href="https://github.com/Jennifer-Dong/VegetableQuiz" style="display: block;" target="_blank">Github</a>
+                    <a href="https://l.messenger.com/l.php?u=https%3A%2F%2Fjennifer-dong.github.io%2FVegetableQuiz%2F&h=AT2hN5vWnUO5N8nckovBYQ72KchEw02uVb4Tq8Wdb8OnI_wc5Nma4Mhb7n2loUe7-r3KAa3ppr6lnWPoHMpG8_Y6C2xZqv6z31B-ap1uMyVQyES_HC0yTx5O2B9DvUveQAL5UA" target="_blank">Take the Quiz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact">                                               <!--contact section-->
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-envelope"></i>jenndong12016@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i>647-809-8898</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/jenniferdong23/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                    <a href="images/resume.pdf" download class="resume">Download Resume</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="name" name="Name" placeholder="Enter Name" required>
+                        <input type="email" name="Email" placeholder="Enter Email" required>
+                        <textarea name="Message" rows="10" placeholder="Enter Message"></textarea>
+                        <button type="submit" class="subBut">Submit</button>
+                    </form>
+                    <span id="contactsent"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--my services put skills, my work put personal projects-->
+    <!--my work put work experience with links to company pages, my services put personal projects with links to github-->
+    
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");         //selects all HTML elements in the document that have the class "tab-links" and stores them in tablinks
+    var tabcontents = document.getElementsByClassName("tab-contents");   //selects all HTML elements in the document that have the class "tab-contents" and stores them in tabcontents
+
+    function opentab(tabname){                          //triggered when one of the tab links are clicked
+        for(tablink of tablinks){                           //go through every element in the 'tablinks' array
+            tablink.classList.remove("active-link");        //removes the "active-link" class from each tab link
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");   //no class has "active-link" class currently, so add it to the element that was clicked so the text will be underlined
+        document.getElementById(tabname).classList.add("active-tab"); //given the name of the id, add the active-tab class to it so the content of the tab will be shown
+    }
+
+</script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxv4RFgI5tyL4n_Oc4AjfD9GHqzFt7_207cTWXfgDm4G6sM7KarlOXWgpDvSIyZcyeFZQ/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const contactsent = document.getElementById("contactsent")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            contactsent.innerHTML = "Message sent successfully!"
+            setTimeout(function(){
+                contactsent.innerHTML = ""
+            }, 5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+</body>
+</html>

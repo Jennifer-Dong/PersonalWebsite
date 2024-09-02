@@ -1,0 +1,400 @@
+*{
+    margin: 0;                                  /*spaces around elements*/
+    padding: 0;                                 /*space inside elements*/
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;                     /*when setting width and height of element, it includes the content and padding*/
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: #fcfcff;                      /*background color*/
+    color: #000;                              /*text color*/
+}
+
+/*---------------------------------------header section---------------------------------------*/
+#header{                                        /*for header id section*/
+    width: 100%;
+    height: 100vh;                              /*occupies entirety of the viewport*/
+    background-image: url(images/banner4.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.container{
+    padding: 10px 10%;                          /*10px for top and bottom, 10% from left and right sides*/
+}
+
+nav{
+    display: flex;                              /*makes a flexbox*/
+    align-items: center;
+    justify-content: space-between;             /*evenly distributes horizontal space between items*/
+    flex-wrap: wrap;                            /*items wrap to next line*/
+}
+
+nav ul li{
+    display: inline-block;                      /*display items horizontally*/
+    list-style: none;                           /*removes bullet points*/
+    margin: 10px 20px;                          /*10px top/bottom and 20px left/right of each list item*/
+}
+
+nav ul li a{
+    color: #000;
+    text-decoration: none;                      /*removes underline of links*/
+    font-size: 18px;
+    position: relative;                         /*doesn't change layout around it, links side by side, not on top of each other*/
+}
+
+nav ul li a::after{                             /*content after <a>, the nav bar-this is the underline*/
+    content: '';                                /*no actual content*/
+    width: 0;                                   /*hide it while not hovered*/
+    height: 3px;                                /*just for the underline*/
+    background: #3D4856;
+    position: absolute;                         /*position changes layout around it, positions to nearest ancestor with position: relative, absolute, or fixed*/
+    left: 0;
+    bottom: -5px;                               /*5 pixels above bottom edge of <a> element*/
+    transition: 0.5s;                           /*takes 0.5s for transition to do*/
+}
+
+nav ul li a:hover::after{
+    width:100%                                  /*underline will show when hovered over*/
+}
+
+.header-text{                                   /*BS CS & MS*/
+    margin-top: 200px;
+    font-size: 30px;
+}
+
+.header-text h1{                                /*name*/
+    margin-top: 20px;
+    font-size: 60px;
+}
+
+/*---------------------------------------about section---------------------------------------*/
+#about{
+    padding: 80px 0;                            /*80 top&bottom, 0 left&right*/
+    color: #000;
+}
+
+.row{
+    display: flex;                              /*get content side by size*/
+    justify-content: space-between;             /*evenly distributes horizontal space between items*/
+    flex-wrap: wrap;                            /*items wrap to next line*/
+}
+
+.about-col-1{
+    flex-basis: 35%; /*width of column will be 35%*/
+}
+
+.about-col-1 img{
+    width: 100%;  /*will be 100% of 35% of the screen since it is insize class about-col-1*/
+    border-radius: 15px; /*round image corners*/
+}
+
+.about-col-2{
+    flex-basis: 60%; /*width of column will be 60%*/
+}
+
+.about-me{
+    font-size: 60px;
+    font-weight: bold; /*bold=700, font is bold*/
+    color: #000;
+    padding: 20px;
+}
+
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px; /*20 top, 0 left and right, 40 bottom*/
+}
+
+.tab-links{
+    margin-right: 50px; /*space between each one*/
+    font-size: 18px;
+    font-weight: 500;   /*more bold*/
+    cursor: pointer; /*pointer when hovering*/
+    position: relative; /*doesn't change layout around it, links side by side, not on top of each other*/
+}
+
+.tab-links::after{                             /*content after tab links, the nav bar-this is the underline*/
+    content: '';                                /*no actual content*/
+    width: 0;                                   /*hide it while not hovered*/
+    height: 3px;                                /*just for the underline*/
+    background: #6082B6;
+    position: absolute;                         /*position changes layout around it, positions to nearest ancestor with position: relative, absolute, or fixed*/
+    left: 0;
+    bottom: -8px;                               /*5 pixels above bottom edge of tab link element*/
+    transition: 0.5s;                           /*takes 0.5s for transition to do*/
+}
+
+.tab-links.active-link::after{
+    width: 100%;
+}
+
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 10px;
+}
+
+.tab-contents ul li span{
+    color: #6082B6;
+    font-size: 14px;
+}
+
+.tab-contents{
+    display: none;
+}
+
+.tab-contents.active-tab{ /*to show the info from first tab*/
+    display: block;
+}
+
+/*---------------------------------------work section---------------------------------------*/
+#work{
+    padding: 50px 0;
+}
+
+.work-exp{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /*sets grid's column template, grid automatically adjusts number or columns to fit the space, each column at least 250px wide, can expand to 1fr (fr values will be divided between the space that's left after what's taken by other values*/
+    grid-gap: 40px;                       /*sets the 40px gap between grid items*/
+    margin-top: 30px;
+}
+
+.work{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.work img{
+    width: 100%;
+    border-radius: block;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.work:hover img{
+    transform: scale(1.1);
+}
+
+.work:hover .layer{
+    height: 100%;
+}
+
+.layer {
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(255, 255, 255, 0.5), #6082B6);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    pad: 0 10px;
+    text-align: center;
+    font-size: 15px;
+    transition: height 0.5s;
+}
+
+.layer h3{
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.layer h5{
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.layer p{
+    font-weight: 520;
+    padding: 10px;
+}
+
+.layer a{
+    margin: 20px 0;
+    color: #6082B6;
+    text-decoration: mone;
+    font-size: 18px;
+    line-height: 60px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+/*---------------------------------------projects section---------------------------------------*/
+#projects{
+    padding: 30px 0;
+}
+
+.project-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /*sets grid's column template, grid automatically adjusts number or columns to fit the space, each column at least 250px wide, can expand to 1fr (fr values will be divided between the space that's left after what's taken by other values*/
+    grid-gap: 40px;                       /*sets the 40px gap between grid items*/
+    margin-top: 30px;
+}
+
+.project-list div{
+    background: #f3eff4;
+    padding: 40px;
+    font-size: 12px;
+    font-weight: 300;
+    border-right: 10px; /*doesn't do anything so far*/
+    border-radius: 5px;
+    transition: background 0.5s, transform 0.5s;
+}
+
+.project-list div p{
+    padding: 10px 0;
+}
+
+.project-list div i{  /*font awesome icons*/
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.project-list div h2{
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.project-list div a{
+    text-decoration: none;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.project-list div:hover{
+    background: #6082B6;
+    transform: translateY(-10px); /*moves to up 10px*/
+}
+
+/*---------------------------------------contact section---------------------------------------*/
+.contact-left{
+    flex-basis: 35%;
+}
+
+.contact-left p{
+    margin-top: 30px;
+}
+
+.contact-left p i{
+    color: #3D4856;
+    margin-right: 15px;
+    font-size: 25px;
+}
+
+.contact-right{
+    flex-basis: 60%;
+}
+
+.contact-right form{
+    width: 100%;
+}
+
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background-color: #f3eff4;
+    padding: 15px;
+    margin: 15px 0;
+    color: #3D4856;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+form .subBut{
+    padding:15px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor:pointer;
+}
+
+#contactsent {
+    color: #3D4856;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    display: block;
+}
+
+.social-icons{
+    margin-top: 30px;
+
+}
+
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #3D4856;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+
+.social-icons a:hover{
+    color: #0077B5;
+    transform: translateY(-5px);
+}
+
+.resume{
+    margin-top: 15px;
+    display: inline-block;
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: 300;
+    color:#000;
+    background:#bfcde2;
+    text-decoration: none;
+    transition: transform 0.5s;
+}
+
+.resume:hover{
+    background: #6082B6;
+    transform: translateY(-5px);
+}
+
+
+.subBut{
+    display: block;
+    margin: 20px auto;
+    width: fit-content;
+    border: 1px solid #6082B6;
+    padding: 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #000;
+    background-color: #bfcde2;
+    transition: background 0.5s;
+}
+
+.subBut:hover{
+    background:#6082B6
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
